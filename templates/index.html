@@ -1,0 +1,16 @@
+{% extends "layout.html" %} {% block titulo %}Inicio – Ahorcado{% endblock %} {%
+block contenido %}
+<section style="text-align: center">
+  <h2>Bienvenido al Ahorcado</h2>
+  <form
+    action="{{ url_for('iniciar') }}"
+    method="post"
+    style="margin-bottom: 10px"
+  >
+    <button type="submit">Iniciar nueva partida</button>
+  </form>
+  <form action="{{ url_for('reiniciar') }}" method="post">
+    <button type="submit">Reiniciar juego</button>
+  </form>
+</section>
+{% endblock %}

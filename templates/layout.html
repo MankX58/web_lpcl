@@ -1,0 +1,19 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block titulo %}Ahorcado{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/estilo.css') }}"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Juego del Ahorcado</h1>
+    </header>
+    <main>{% block contenido %}{% endblock %}</main>
+    <footer>
+      <p>© 2025 Curso Código Limpio</p>
+    </footer>
+  </body>
+</html>

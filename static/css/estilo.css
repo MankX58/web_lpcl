@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  bottom: 0rem;
+  left: 0rem;
+}
+
+main {
+  padding: 20px;
+}
+
+button {
+  margin: 2px;
+  padding: 8px 12px;
+  font-size: 1em;
+}
+
+.letra {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 2px;
+  border-bottom: 2px solid #333;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

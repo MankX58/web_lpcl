@@ -1,0 +1,40 @@
+{% extends "layout.html" %} {% block titulo %}Jugando – Ahorcado{% endblock %}
+{% block contenido %}
+<section style="text-align: center">
+  <h2>Juego #{{ id_juego }}</h2>
+
+  <p>
+    Palabra: {% for c in palabra_mostrada %}
+    <span class="letra">{{ c }}</span>
+    {% endfor %}
+  </p>
+
+  <p>Errores: {{ fallidos }} de {{ intentos_max }}</p>
+
+  <form
+    id="tecladoForm"
+    action="{{ url_for('juego', id_juego=id_juego) }}"
+    method="post"
+  >
+    <input type="hidden" name="letra" id="letraInput" />
+  </form>
+
+  <form action="{{ url_for('juego', id_juego=id_juego) }}" method="post">
+    {% for l in disponibles %}
+    <button type="submit" name="letra" value="{{ l }}">{{ l }}</button>
+    {% endfor %}
+  </form>
+</section>
+
+<script>
+  const disponibles = {{ disponibles | tojson }};
+  document.addEventListener('keydown', function (e) {
+    const key = e.key.toUpperCase();
+    if (disponibles.includes(key)) {
+      e.preventDefault();
+      document.getElementById('letraInput').value = key;
+      document.getElementById('tecladoForm').submit();
+    }
+  });
+</script>
+{% endblock %}
